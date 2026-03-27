@@ -1,42 +1,6 @@
-tudent name: Ravi Zapadiya
-Student ID: (fill this)
-Submission date: (fill this)
-
-🔍 Problem
-
-Predict whether a patient will be readmitted within 30 days of discharge using structured clinical data from City General Hospital (3,800 training records, 950 test records).
-
-🤖 My model
-🧠 Architecture:
-
-I implemented a tabular deep learning model (MLP) with the following structure:
-
-Input layer → 64 neurons (ReLU)
-Hidden layer → 32 neurons (ReLU)
-Dropout (0.3) for regularization
-Output layer → 1 neuron (Sigmoid)
-
-Binary Cross-Entropy loss was used, optimized with Adam. Early stopping was applied to prevent overfitting.
-
-⚙️ Key preprocessing decisions:
-
-I split the data before preprocessing to avoid leakage, applied log transformation to skewed medical features (length of stay, creatinine), and engineered interaction features (age × length of stay, comorbidity × length of stay). Missing glucose values were imputed using the training median, and categorical variables were one-hot encoded with strict column alignment between train and test.
-
-⚖️ How I handled class imbalance:
-
-The dataset had a strong imbalance (~90:10). I used class weighting (scale_pos_weight equivalent) instead of resampling to avoid introducing synthetic medical data. This ensured the model focused more on minority cases while preserving the original data distribution.
-
-| Metric                  | Value                                |
-| ----------------------- | ------------------------------------ |
-| AUROC                   | 0.85 _(approx — update if computed)_ |
-| F1 (minority class)     | 0.60                                 |
-| Precision (minority)    | 0.53                                 |
-| Recall (minority)       | 0.69                                 |
-| Decision threshold used | 0.40                                 |
-
-Readmission-DL — City General Hospital 30-day Readmission Prediction
-
-Student name: Student ID: Submission date:
+Student name: Zapadiya Ravi
+Student ID:1129
+Submission date:27/03/2026
 Problem
 
 Predict whether a patient will be readmitted within 30 days of discharge using structured clinical data from City General Hospital (3,800 training records, 950 test records).
